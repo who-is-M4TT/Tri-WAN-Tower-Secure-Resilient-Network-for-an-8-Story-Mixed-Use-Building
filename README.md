@@ -53,16 +53,5 @@ mixed-use-building-network/
 2. `docs/addressing-plan.md` and `tables/` for VLANs, IPs, ports and equipment.
 3. `configs/` for baseline configs, and `docs/operations-and-recovery.md` to verify and run it.
 
-## Status
-- [x] Architecture, security and operations documentation
-- [x] VLAN/IP plan, port map and equipment list
-- [x] Baseline configs (core, 8 floor switches, firewall policy)
-- [ ] Lab simulation (Packet Tracer / GNS3) and test results
-- [ ] L1 / L2 / L3 split drawings, device models and cost estimate
-- [ ] Per-unit isolation for residents (PPSK or private VLANs)
-
-## Before you publish
-Work through the checklist in `docs/security.md` (public addresses, secrets, identifiers, owner permission, git history).
-
 ## License
 Configs and tables: MIT. Documentation and diagrams: CC BY 4.0.
