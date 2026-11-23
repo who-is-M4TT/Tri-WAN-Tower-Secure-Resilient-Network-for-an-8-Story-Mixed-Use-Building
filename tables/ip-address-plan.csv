@@ -1,0 +1,37 @@
+host,ip_address,vlan,role,notes
+FW VIP,10.20.0.1,2,Firewall pair virtual IP,VRRP/CARP
+FW-A,10.20.0.2,2,Firewall (active),
+FW-B,10.20.0.3,2,Firewall (standby),
+DS-STACK transit,10.20.0.4,2,Distribution stack,Default route to 10.20.0.1
+DS-STACK management,10.20.10.1,10,Distribution stack / gateway for VLAN 10,
+AP controller,10.20.10.20,10,Wi-Fi 6 AP management,
+FSW-F1,10.20.10.21,10,Floor 1 access switch,
+FSW-F2,10.20.10.22,10,Floor 2 access switch,
+FSW-F3,10.20.10.23,10,Floor 3 access switch,
+FSW-F4,10.20.10.24,10,Floor 4 access switch,
+FSW-F5,10.20.10.25,10,Floor 5 access switch,
+FSW-F6,10.20.10.26,10,Floor 6 access switch,
+FSW-F7,10.20.10.27,10,Floor 7 access switch,
+FSW-F8,10.20.10.28,10,Floor 8 access switch,
+NMS / syslog / NTP / backup,10.20.10.30,10,Monitoring,
+Jump host,10.20.10.50,10,Only admin path to devices and ACS,Reached via MFA VPN
+DC-1,10.20.25.10,25,Domain controller,"DHCP, DNS"
+DC-2,10.20.25.11,25,Domain controller,"DHCP, DNS"
+FILE,10.20.25.12,25,File server,
+PRINT,10.20.25.13,25,Print server,
+RADIUS-NPS,10.20.25.14,25,802.1X for enterprise Wi-Fi,
+ACS server (door),10.20.40.10,40,Access-control server,Not routed
+ACS server (elevator),10.20.41.10,41,Elevator system server,Not routed
+Firewall if-cctv,10.20.70.1,70,CCTV gateway,"Deny-all inbound, NTP only"
+NVR,10.20.70.10,70,Video recording,
+IP cameras floor 1,10.20.70.101-108,70,8 cameras,DHCP reservations or static
+IP cameras floor 2,10.20.70.109-116,70,8 cameras,DHCP reservations or static
+IP cameras floor 3,10.20.70.117-118,70,2 cameras,DHCP reservations or static
+IP cameras floor 4,10.20.70.119-120,70,2 cameras,DHCP reservations or static
+IP cameras floor 5,10.20.70.121-122,70,2 cameras,DHCP reservations or static
+IP cameras floor 6,10.20.70.123-124,70,2 cameras,DHCP reservations or static
+IP cameras floor 7,10.20.70.125-126,70,2 cameras,DHCP reservations or static
+IP cameras floor 8,10.20.70.127-128,70,2 cameras,DHCP reservations or static
+Firewall if-dmz,10.20.200.1,200,DMZ gateway,
+Web server (DMZ),10.20.200.10,200,Public web server,Mail is hosted externally or pinned to WAN 1
+WAN 1 / 2 / 3,<REDACTED>,n/a,ISP-assigned addresses,Never publish real public IPs

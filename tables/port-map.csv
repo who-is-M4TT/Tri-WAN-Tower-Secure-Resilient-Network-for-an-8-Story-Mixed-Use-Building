@@ -1,0 +1,94 @@
+local_device,local_port,remote_device,remote_port,link_type,vlan_or_trunk,notes
+DS-1,Te1/0/1,FSW-F1,Te1/1/1,10G SFP+ (LACP Po11),trunk,member 1 of Po11
+DS-2,Te2/0/1,FSW-F1,Te1/1/2,10G SFP+ (LACP Po11),trunk,member 2 of Po11
+DS-1,Te1/0/2,FSW-F2,Te1/1/1,10G SFP+ (LACP Po12),trunk,member 1 of Po12
+DS-2,Te2/0/2,FSW-F2,Te1/1/2,10G SFP+ (LACP Po12),trunk,member 2 of Po12
+DS-1,Te1/0/3,FSW-F3,Te1/1/1,10G SFP+ (LACP Po13),trunk,member 1 of Po13
+DS-2,Te2/0/3,FSW-F3,Te1/1/2,10G SFP+ (LACP Po13),trunk,member 2 of Po13
+DS-1,Te1/0/4,FSW-F4,Te1/1/1,10G SFP+ (LACP Po14),trunk,member 1 of Po14
+DS-2,Te2/0/4,FSW-F4,Te1/1/2,10G SFP+ (LACP Po14),trunk,member 2 of Po14
+DS-1,Te1/0/5,FSW-F5,Te1/1/1,10G SFP+ (LACP Po15),trunk,member 1 of Po15
+DS-2,Te2/0/5,FSW-F5,Te1/1/2,10G SFP+ (LACP Po15),trunk,member 2 of Po15
+DS-1,Te1/0/6,FSW-F6,Te1/1/1,10G SFP+ (LACP Po16),trunk,member 1 of Po16
+DS-2,Te2/0/6,FSW-F6,Te1/1/2,10G SFP+ (LACP Po16),trunk,member 2 of Po16
+DS-1,Te1/0/7,FSW-F7,Te1/1/1,10G SFP+ (LACP Po17),trunk,member 1 of Po17
+DS-2,Te2/0/7,FSW-F7,Te1/1/2,10G SFP+ (LACP Po17),trunk,member 2 of Po17
+DS-1,Te1/0/8,FSW-F8,Te1/1/1,10G SFP+ (LACP Po18),trunk,member 1 of Po18
+DS-2,Te2/0/8,FSW-F8,Te1/1/2,10G SFP+ (LACP Po18),trunk,member 2 of Po18
+DS-1,Te1/0/9,ENT-SERVERS block,NIC1,10G (LACP Po20),access 25,one link per stack member
+DS-2,Te2/0/9,ENT-SERVERS block,NIC2,10G (LACP Po20),access 25,one link per stack member
+DS-1,Te1/0/10,MGMT block,NIC1,10G (LACP Po21),access 10,one link per stack member
+DS-2,Te2/0/10,MGMT block,NIC2,10G (LACP Po21),access 10,one link per stack member
+DS-1,Te1/0/11,ACS servers,NIC1,10G (LACP Po22),"trunk 40,41",one link per stack member
+DS-2,Te2/0/11,ACS servers,NIC2,10G (LACP Po22),"trunk 40,41",one link per stack member
+DS-1,Te1/0/12,NVR,NIC1,10G (LACP Po23),access 70,one link per stack member
+DS-2,Te2/0/12,NVR,NIC2,10G (LACP Po23),access 70,one link per stack member
+DS-1,Te1/0/13,FW-A,if-lan,10G SFP+,"trunk 2,70",
+DS-2,Te2/0/13,FW-B,if-lan,10G SFP+,"trunk 2,70",
+DS-1/DS-2,"Te1/0/14-32 , Te2/0/14-32",(spare),,,999,shutdown
+FSW-F1,Te1/1/1,DS-1,Te1/0/1,10G SFP+ (LACP Po1),trunk,
+FSW-F1,Te1/1/2,DS-2,Te2/0/1,10G SFP+ (LACP Po1),trunk,
+FSW-F1,Gi1/0/1-2,AP-F1-1..2,eth0,1G/2.5G PoE+,"trunk native 10; allowed 10,50,60",Wi-Fi 6 AP
+FSW-F1,Gi1/0/3,DOOR-F1-1,eth0,PoE+,access 40,Door controller
+FSW-F1,Gi1/0/4,ELEV-F1-1,eth0,PoE,access 41,Elevator controller
+FSW-F1,Gi1/0/5-12,CAM-F1-1..8,eth0,PoE,access 70,IP cameras
+FSW-F1,Gi1/0/13-14,PRN-F1-1..2,eth0,RJ45,access 30,Network printers
+FSW-F1,Gi1/0/15-34,OUT-F1-1..20,wall outlet,RJ45,access 20,Enterprise outlets
+FSW-F1,Gi1/0/35-48,(unused),,,999,"shutdown, power inline never"
+FSW-F2,Te1/1/1,DS-1,Te1/0/2,10G SFP+ (LACP Po1),trunk,
+FSW-F2,Te1/1/2,DS-2,Te2/0/2,10G SFP+ (LACP Po1),trunk,
+FSW-F2,Gi1/0/1-2,AP-F2-1..2,eth0,1G/2.5G PoE+,"trunk native 10; allowed 10,50",Wi-Fi 6 AP
+FSW-F2,Gi1/0/3,DOOR-F2-1,eth0,PoE+,access 40,Door controller
+FSW-F2,Gi1/0/4,ELEV-F2-1,eth0,PoE,access 41,Elevator controller
+FSW-F2,Gi1/0/5-12,CAM-F2-1..8,eth0,PoE,access 70,IP cameras
+FSW-F2,Gi1/0/13-14,PRN-F2-1..2,eth0,RJ45,access 30,Network printers
+FSW-F2,Gi1/0/15-34,OUT-F2-1..20,wall outlet,RJ45,access 20,Enterprise outlets
+FSW-F2,Gi1/0/35-48,(unused),,,999,"shutdown, power inline never"
+FSW-F3,Te1/1/1,DS-1,Te1/0/3,10G SFP+ (LACP Po1),trunk,
+FSW-F3,Te1/1/2,DS-2,Te2/0/3,10G SFP+ (LACP Po1),trunk,
+FSW-F3,Gi1/0/1-2,AP-F3-1..2,eth0,1G/2.5G PoE+,"trunk native 10; allowed 10,103",Wi-Fi 6 AP
+FSW-F3,Gi1/0/3,DOOR-F3-1,eth0,PoE+,access 40,Door controller
+FSW-F3,Gi1/0/4,ELEV-F3-1,eth0,PoE,access 41,Elevator controller
+FSW-F3,Gi1/0/5-6,CAM-F3-1..2,eth0,PoE,access 70,IP cameras
+FSW-F3,Gi1/0/7-10,OUT-F3-1..4,wall outlet,RJ45,access 103,"Unit outlets, protected ports"
+FSW-F3,Gi1/0/11-24,(unused),,,999,"shutdown, power inline never"
+FSW-F4,Te1/1/1,DS-1,Te1/0/4,10G SFP+ (LACP Po1),trunk,
+FSW-F4,Te1/1/2,DS-2,Te2/0/4,10G SFP+ (LACP Po1),trunk,
+FSW-F4,Gi1/0/1-2,AP-F4-1..2,eth0,1G/2.5G PoE+,"trunk native 10; allowed 10,104",Wi-Fi 6 AP
+FSW-F4,Gi1/0/3,DOOR-F4-1,eth0,PoE+,access 40,Door controller
+FSW-F4,Gi1/0/4,ELEV-F4-1,eth0,PoE,access 41,Elevator controller
+FSW-F4,Gi1/0/5-6,CAM-F4-1..2,eth0,PoE,access 70,IP cameras
+FSW-F4,Gi1/0/7-10,OUT-F4-1..4,wall outlet,RJ45,access 104,"Unit outlets, protected ports"
+FSW-F4,Gi1/0/11-24,(unused),,,999,"shutdown, power inline never"
+FSW-F5,Te1/1/1,DS-1,Te1/0/5,10G SFP+ (LACP Po1),trunk,
+FSW-F5,Te1/1/2,DS-2,Te2/0/5,10G SFP+ (LACP Po1),trunk,
+FSW-F5,Gi1/0/1-2,AP-F5-1..2,eth0,1G/2.5G PoE+,"trunk native 10; allowed 10,105",Wi-Fi 6 AP
+FSW-F5,Gi1/0/3,DOOR-F5-1,eth0,PoE+,access 40,Door controller
+FSW-F5,Gi1/0/4,ELEV-F5-1,eth0,PoE,access 41,Elevator controller
+FSW-F5,Gi1/0/5-6,CAM-F5-1..2,eth0,PoE,access 70,IP cameras
+FSW-F5,Gi1/0/7-10,OUT-F5-1..4,wall outlet,RJ45,access 105,"Unit outlets, protected ports"
+FSW-F5,Gi1/0/11-24,(unused),,,999,"shutdown, power inline never"
+FSW-F6,Te1/1/1,DS-1,Te1/0/6,10G SFP+ (LACP Po1),trunk,
+FSW-F6,Te1/1/2,DS-2,Te2/0/6,10G SFP+ (LACP Po1),trunk,
+FSW-F6,Gi1/0/1-2,AP-F6-1..2,eth0,1G/2.5G PoE+,"trunk native 10; allowed 10,106",Wi-Fi 6 AP
+FSW-F6,Gi1/0/3,DOOR-F6-1,eth0,PoE+,access 40,Door controller
+FSW-F6,Gi1/0/4,ELEV-F6-1,eth0,PoE,access 41,Elevator controller
+FSW-F6,Gi1/0/5-6,CAM-F6-1..2,eth0,PoE,access 70,IP cameras
+FSW-F6,Gi1/0/7-10,OUT-F6-1..4,wall outlet,RJ45,access 106,"Unit outlets, protected ports"
+FSW-F6,Gi1/0/11-24,(unused),,,999,"shutdown, power inline never"
+FSW-F7,Te1/1/1,DS-1,Te1/0/7,10G SFP+ (LACP Po1),trunk,
+FSW-F7,Te1/1/2,DS-2,Te2/0/7,10G SFP+ (LACP Po1),trunk,
+FSW-F7,Gi1/0/1-2,AP-F7-1..2,eth0,1G/2.5G PoE+,"trunk native 10; allowed 10,107",Wi-Fi 6 AP
+FSW-F7,Gi1/0/3,DOOR-F7-1,eth0,PoE+,access 40,Door controller
+FSW-F7,Gi1/0/4,ELEV-F7-1,eth0,PoE,access 41,Elevator controller
+FSW-F7,Gi1/0/5-6,CAM-F7-1..2,eth0,PoE,access 70,IP cameras
+FSW-F7,Gi1/0/7-10,OUT-F7-1..4,wall outlet,RJ45,access 107,"Unit outlets, protected ports"
+FSW-F7,Gi1/0/11-24,(unused),,,999,"shutdown, power inline never"
+FSW-F8,Te1/1/1,DS-1,Te1/0/8,10G SFP+ (LACP Po1),trunk,
+FSW-F8,Te1/1/2,DS-2,Te2/0/8,10G SFP+ (LACP Po1),trunk,
+FSW-F8,Gi1/0/1-2,AP-F8-1..2,eth0,1G/2.5G PoE+,"trunk native 10; allowed 10,108",Wi-Fi 6 AP
+FSW-F8,Gi1/0/3,DOOR-F8-1,eth0,PoE+,access 40,Door controller
+FSW-F8,Gi1/0/4,ELEV-F8-1,eth0,PoE,access 41,Elevator controller
+FSW-F8,Gi1/0/5-6,CAM-F8-1..2,eth0,PoE,access 70,IP cameras
+FSW-F8,Gi1/0/7-10,OUT-F8-1..4,wall outlet,RJ45,access 108,"Unit outlets, protected ports"
+FSW-F8,Gi1/0/11-24,(unused),,,999,"shutdown, power inline never"

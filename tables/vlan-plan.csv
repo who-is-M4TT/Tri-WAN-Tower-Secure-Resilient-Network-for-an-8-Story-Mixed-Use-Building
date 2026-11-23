@@ -1,0 +1,19 @@
+vlan_id,name,subnet,gateway,gateway_device,zone,routed,present_on,purpose
+2,TRANSIT,10.20.0.0/29,10.20.0.1,Firewall VIP,Core,yes,"DS stack, firewall pair",Transit between distribution stack and firewall pair
+10,MGMT,10.20.10.0/24,10.20.10.1,DS stack,Management,yes,"All floor switches, DS stack, management block","Device management, jump host, NMS/syslog/NTP, AP controller"
+20,ENT-USERS,10.20.20.0/24,10.20.20.1,DS stack,Enterprise,yes,"FSW-F1, FSW-F2",Enterprise wired users (DHCP from DCs)
+25,ENT-SERVERS,10.20.25.0/24,10.20.25.1,DS stack,Enterprise,yes,DS stack (server block),"2x DC, file, print, RADIUS/NPS"
+30,ENT-PRINTERS,10.20.30.0/24,10.20.30.1,DS stack,Enterprise,yes,"FSW-F1, FSW-F2",Network printers
+40,ACS-DOOR,10.20.40.0/24,none,none,Building systems,no,"All floor switches, ACS server",Door controllers and ACS server
+41,ACS-ELEV,10.20.41.0/24,none,none,Building systems,no,"All floor switches, ACS server",Elevator controllers
+50,WIFI-ENT,10.20.50.0/24,10.20.50.1,DS stack,Enterprise,yes,"FSW-F1, FSW-F2 (AP trunks)","Enterprise Wi-Fi, 802.1X via RADIUS/NPS"
+60,GUEST,10.20.60.0/24,10.20.60.1,DS stack,Guest,yes,FSW-F1 (common-area SSID),"Guest and common-area Wi-Fi, internet only"
+70,CCTV,10.20.70.0/24,10.20.70.1,Firewall pair,CCTV,yes (firewall),"All floor switches, NVR","28 IP cameras + NVR, logically isolated"
+103,RES-F3,10.20.103.0/24,10.20.103.1,DS stack,Residence,yes,FSW-F3,"Residence floor 3 (wired + Wi-Fi), isolated"
+104,RES-F4,10.20.104.0/24,10.20.104.1,DS stack,Residence,yes,FSW-F4,"Residence floor 4 (wired + Wi-Fi), isolated"
+105,RES-F5,10.20.105.0/24,10.20.105.1,DS stack,Residence,yes,FSW-F5,"Residence floor 5 (wired + Wi-Fi), isolated"
+106,RES-F6,10.20.106.0/24,10.20.106.1,DS stack,Residence,yes,FSW-F6,"Residence floor 6 (wired + Wi-Fi), isolated"
+107,RES-F7,10.20.107.0/24,10.20.107.1,DS stack,Residence,yes,FSW-F7,"Residence floor 7 (wired + Wi-Fi), isolated"
+108,RES-F8,10.20.108.0/24,10.20.108.1,DS stack,Residence,yes,FSW-F8,"Residence floor 8 (wired + Wi-Fi), isolated"
+200,DMZ,10.20.200.0/24,10.20.200.1,Firewall pair,DMZ,yes (firewall),Firewall if-dmz only (2.5G),Public web server
+999,BLACKHOLE,none,none,none,Unused,no,Native VLAN on trunks; unused ports,Unused ports are shut down and parked here
