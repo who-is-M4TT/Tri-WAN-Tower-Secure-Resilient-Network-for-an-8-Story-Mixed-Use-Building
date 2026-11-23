@@ -1,4 +1,4 @@
-# Mixed-Use Building Network (Rev 2.0)
+# Mixed-Use Building Network 
 
 Network design for an 8-story mixed-use building: **2 enterprise floors** (1-2) and **6 residential floors** (3-8), with
 building systems (doors, elevators), CCTV, a DMZ and central services. The repo holds the architecture, requirements,
